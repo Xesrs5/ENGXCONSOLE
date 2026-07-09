@@ -50,3 +50,8 @@ void engx_printc(const char *text){
         	NULL
     	);
 	};
+
+int engx_key(int key)
+{
+    return (GetAsyncKeyState(key) & 0x8000) != 0;
+}

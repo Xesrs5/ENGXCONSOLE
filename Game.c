@@ -21,11 +21,9 @@ const char *WinName = "xesrs5";
 void LoopG() {
     // 아래 코드는 기본코드입니다 삭제하셔도 됩니다.
 	
-	if (GetAsyncKeyState(VK_ESCAPE) & 0x8000)
-		{
-			ExitProcess(0);
-			
-		};
+	if (engx_key(VK_ESCAPE)){
+		ExitProcess(0);
+	}
 		
 	
 }
