@@ -24,7 +24,7 @@ void LoopG() {
 	if (engx_key(VK_ESCAPE)){
 		ExitProcess(0);
 	}
-		
+	
 	
 }
 
