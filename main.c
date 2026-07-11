@@ -76,3 +76,21 @@ void engx_clear(){
 	);
 
 };
+
+void engx_cursor(int CX, int CY) {
+
+	COORD pos2;
+	pos2.X = CX;
+	pos2.Y = CY;
+	SetConsoleCursorPosition(
+		cmdhandle1,
+		pos2
+	);
+}
+
+void engx_color(int CLtext) {
+	SetConsoleTextAttribute(
+		cmdhandle1,
+		CLtext
+	);
+}

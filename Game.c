@@ -24,6 +24,7 @@ void LoopG() {
 	if (engx_key(VK_ESCAPE)){
 		ExitProcess(0);
 	}
+	engx_cursor(1, 1);
 	
 	
 }
@@ -32,7 +33,7 @@ void LoopG() {
 
 void StartG() {
     // 아래 코드는 기본코드입니다 삭제하셔도 됩니다.
-
+	engx_color(1);
 	engx_printc("NOTHING");
 	engx_loopg = 1;
 	

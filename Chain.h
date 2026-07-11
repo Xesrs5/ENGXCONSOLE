@@ -6,3 +6,5 @@ extern HANDLE cmdhandle1;
 extern int engx_loopg;
 int engx_key(int key);
 void engx_clear();
+void engx_cursor();
+void engx_color();
