@@ -14,7 +14,8 @@
 
 // engx_loopg를 0으로 바꾸면 loopg를 멈출수있습니다. 바꾸는건 engx_loopg = 0;으로 하세요. loopg 또는 startg 안에서만 써주세요.
 
-
+static int X2 = 0;
+static int Y2 = 0;
 
 const char *WinName = "xesrs5";
 
@@ -24,7 +25,15 @@ void LoopG() {
 	if (engx_key(VK_ESCAPE)){
 		ExitProcess(0);
 	}
-	engx_cursor(1, 1);
+	engx_getcursorpos();
+	if (engx_key(VK_RIGHT)) {
+		int righton = 1;
+		if (righton) {
+			X2++;
+			engx_cursor(X2, Y2);
+			righton = 0;
+		}
+	}
 	
 	
 }
@@ -33,9 +42,8 @@ void LoopG() {
 
 void StartG() {
     // 아래 코드는 기본코드입니다 삭제하셔도 됩니다.
-	engx_color(1);
-	engx_printc("NOTHING");
 	engx_loopg = 1;
-	
-
+	engx_printci(consolecursorpos.X);
+	engx_printci(consolecursorpos.Y);
+	 
 }

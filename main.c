@@ -7,6 +7,7 @@
 #include <windows.h>
 #include "Chain.h"
 #include <string.h>
+#include <stdio.h>
 
 HANDLE cmdhandle1;
 int consoleexit = 1;
@@ -16,6 +17,7 @@ COORD pos1;
 DWORD TNUMBER1;
 LPDWORD TNUMBER1P;
 DWORD Length1;
+COORD consolecursorpos;
 
 
 int main() {
@@ -93,4 +95,24 @@ void engx_color(int CLtext) {
 		cmdhandle1,
 		CLtext
 	);
+}
+
+void engx_getcursorpos() {
+	CONSOLE_SCREEN_BUFFER_INFO cursorpos1;
+	GetConsoleScreenBufferInfo(
+		cmdhandle1,
+		&cursorpos1
+	);
+	consolecursorpos.X = cursorpos1.dwCursorPosition.X;
+	consolecursorpos.Y = cursorpos1.dwCursorPosition.Y;
+	
+}
+
+// 아래의 코드는 내일 만들것 챗지피티 내용 참조
+void engx_printci(int Tinumber1) {
+
+	char buffer[64];
+	snprintf(buffer, sizeof(buffer), "%d", Tinumber1);
+	engx_printc(buffer);
+
 }

@@ -8,3 +8,6 @@ int engx_key(int key);
 void engx_clear();
 void engx_cursor();
 void engx_color();
+void engx_getcursorpos();
+void engx_printci();
+extern COORD consolecursorpos;
