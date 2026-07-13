@@ -108,11 +108,19 @@ void engx_getcursorpos() {
 	
 }
 
-// 아래의 코드는 내일 만들것 챗지피티 내용 참조
 void engx_printci(int Tinumber1) {
 
 	char buffer[64];
 	snprintf(buffer, sizeof(buffer), "%d", Tinumber1);
 	engx_printc(buffer);
 
+}
+CONSOLE_CURSOR_INFO showcursor2;
+void engx_showcursor(int showcursor1) {
+		showcursor2.bVisible = showcursor1;
+		showcursor2.dwSize = 25;
+		SetConsoleCursorInfo(
+			cmdhandle1,
+			&showcursor2
+		);
 }
